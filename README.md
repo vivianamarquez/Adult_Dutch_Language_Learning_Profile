@@ -19,5 +19,3 @@ This project was developed by:
 Computer Science students at Unicomfacauca in Popayán, Colombia 🇨🇴 
 
 It was completed as part of their final project for the AI4All elective, under the supervision of Professor [Viviana Márquez](https://www.linkedin.com/in/vivianamarquez/). 
-
-<hr>
