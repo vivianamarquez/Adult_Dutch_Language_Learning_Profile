@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <title>Dutch Language Proficiency Predictor</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
@@ -24,19 +27,26 @@
             border-radius: 5px;
             background-color: #e9ecef;
         }
+        .recommendation {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #e7f5ff;
+            border-left: 4px solid #339af0;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1 class="mb-4">Dutch Language Proficiency Predictor</h1>
-        <form method="POST">
+        <form method="POST" id="predictionForm">
             <div class="row g-3">
                 <div class="col-md-6">
                     <label for="AaA" class="form-label">Age of Arrival</label>
                     <input type="number" class="form-control" id="AaA" name="AaA" required step="any">
                 </div>
                 <div class="col-md-6">
-                    <label for="LoR" class="form-label">Length of Residence in the Netherlands</label>
+                    <label for="LoR" class="form-label">Length of Residence</label>
                     <input type="number" class="form-control" id="LoR" name="LoR" required step="any">
                 </div>
                 <div class="col-md-6">
@@ -45,7 +55,7 @@
                         <option value="">Choose...</option>
                         <option value="1.0">Elementary School</option>
                         <option value="2.0">Junior High School</option>
-                        <option value="3.0">University</option>
+                        <option value="3.0">University Degree</option>
                         <option value="4.0">Graduate Studies</option>
                     </select>
                 </div>
@@ -57,16 +67,16 @@
                     <label for="L1_mod" class="form-label">Native Language (L1)</label>
                     <select class="form-select" id="L1_mod" name="L1_mod" required>
                         <option value="">Choose...</option>
-                        <option value="Germanic">Germanic (German, English, etc.)</option>
+                        <option value="Germanic">Germanic (English, German, etc.)</option>
                         <option value="Indo-European (Non-Germanic)">Indo-European (Spanish, French, etc.)</option>
-                        <option value="Non-Indo-European">Not Indo-European (Chinese, Japanese, etc.)</option>
+                        <option value="Non-Indo-European">Non-Indo-European (Chinese, Japanese, etc.)</option>
                     </select>
                 </div>
                 <div class="col-md-6">
                     <label for="L2_mod" class="form-label">Second Language (L2)</label>
                     <select class="form-select" id="L2_mod" name="L2_mod" required>
                         <option value="">Choose...</option>
-                        <option value="Germanic">Germanic (German, English, etc.)</option>
+                        <option value="Germanic">Germanic (English, German, etc.)</option>
                         <option value="Monolingual">Monolingual</option>
                         <option value="Other">Other</option>
                     </select>
@@ -74,6 +84,7 @@
             </div>
             <div class="mt-4">
                 <button type="submit" class="btn btn-primary">Predict Proficiency</button>
+                <button type="button" class="btn btn-secondary" onclick="clearForm()">Clear Form</button>
             </div>
         </form>
         
@@ -83,7 +94,35 @@
             <p class="h3">{{ "%.2f"|format(prediction) }}</p>
         </div>
         {% endif %}
+
+        {% if recommendation %}
+        <div class="recommendation">
+            <h4>Personalized Learning Recommendation:</h4>
+            <p class="mb-0">{{ recommendation }}</p>
+        </div>
+        {% endif %}
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Clear form fields on page load
+        window.onload = function() {
+            if (window.history.replaceState) {
+                window.history.replaceState(null, null, window.location.href);
+            }
+            if (!document.referrer) {
+                clearForm();
+            }
+        }
+
+        // Function to clear the form
+        function clearForm() {
+            document.getElementById('predictionForm').reset();
+            // Remove results if they exist
+            const result = document.querySelector('.result');
+            const recommendation = document.querySelector('.recommendation');
+            if (result) result.style.display = 'none';
+            if (recommendation) recommendation.style.display = 'none';
+        }
+    </script>
 </body>
 </html> 
