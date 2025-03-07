@@ -4,7 +4,7 @@
 
 This project aims to **predict the speaking proficiency of adult learners** taking the **State Examination of Dutch as a Second Language (STEX)** using **machine learning models**. By analyzing linguistic, and educational data, we identify the strongest predictors of language proficiency and provide insights that can guide **educators, policymakers, and language learners** in optimizing Dutch language acquisition.
 
-The dataset, originally compiled by **Schepens, van Hout, and Jaeger (2020)** and available on [Kaggle](https://www.kaggle.com/datasets/thedevastator/adult-language-learning-profile/data?select=stex.csv), contains **anonymized exam results** and **demographic information** of learners residing in the Netherlands.
+The dataset, originally compiled by **Schepens, van Hout, and Jaeger (2020)** and available on [Kaggle](https://www.kaggle.com/datasets/thedevastator/adult-language-learning-profile/data?select=stex.csv) [(Kaggle notebook)](https://www.kaggle.com/code/vivianamarquez/predicting-dutch-speaking-proficiency-using-ml/notebook), contains **anonymized exam results** and **demographic information** of learners residing in the Netherlands.
 
 ## 📖 Notebooks
 
