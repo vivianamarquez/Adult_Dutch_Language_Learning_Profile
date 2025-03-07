@@ -6,9 +6,9 @@ Our analysis reveals that enrolling in Dutch language courses is the strongest p
 
 Policy recommendations include expanding access to Dutch courses, offering tailored support for high-risk language groups, promoting early exposure programs, and encouraging multilingual education. Future work should explore longitudinal studies, personalized learning plans, and predictive AI tools to optimize language acquisition strategies.
 
-#### Repo Organization
-[Model and insights](https://github.com/vivianamarquez/Adult_Dutch_Language_Learning_Profile/blob/main/Predicting_Dutch_Speaking_Proficiency.ipynb)
-[Ideas for implementation](https://github.com/vivianamarquez/Adult_Dutch_Language_Learning_Profile/blob/main/Implementation.ipynb)
+#### Notebooks
+- [Model and insights](https://github.com/vivianamarquez/Adult_Dutch_Language_Learning_Profile/blob/main/Predicting_Dutch_Speaking_Proficiency.ipynb)
+- [Ideas for implementation](https://github.com/vivianamarquez/Adult_Dutch_Language_Learning_Profile/blob/main/Implementation.ipynb)
 
 #### Project Contributors
 
